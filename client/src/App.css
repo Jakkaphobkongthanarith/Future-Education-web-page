@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiny5&display=swap");
+@font-face {
+  font-family: "Crayon";
+  src: url("./font/FC Crayon Regular [Non-commercial].ttf") format("truetype"),
+    url("./font/FC Crayon Regular [Non-commercial] open.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Crayon", sans-serif;
+}
+
+:root {
+  /* --primary-color: hsl(0, 60%, 20%); */
+  /* --secondary-color: hsl(0, 60%, 35%); */
+
+  --muted-color-200: gray;
+}
+
+body {
+  padding: 5%;
+  color: gray;
+  font-size: 1.5em;
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.app-wrapper .app-title {
+  font-size: 60px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #29b6f6;
+  font-size: 2.5em;
+}
+
+.location-title {
+  color: black;
+}
+
+.product {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.product .product-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product .product-detail .product-actions {
+  display: flex;
+}
+
+.product .product-preview {
+  margin-right: 40px;
+}
+
+.product-text-input {
+  border: none;
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+  height: 65px;
+}
+
+.product-input-container input {
+  margin-right: 30px;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.product-list .product {
+  margin-bottom: 30px;
+}
+
+.delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -30px;
+  top: -10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.view-button,
+.edit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  width: 150px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* form styles */
+input {
+  padding: 20px;
+  height: 85px;
+  width: 100%;
+  outline: none;
+  font-size: 30px;
+}
+
+textarea {
+  font-family: kanit;
+  border-radius: 30px;
+  outline: none;
+  border: 5px solid var(--secondary-color);
+  font-size: 30px;
+  color: var(--primary-color);
+  margin-left: 20px;
+  padding: 20px;
+}
+
+textarea::placeholder {
+  font-family: kanit;
+  color: var(--muted-color-200);
+}
+
+input::placeholder {
+  font-family: "Crayon";
+  color: var(--muted-color-200);
+  text-align: center;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+}
+
+.product-form {
+  border: 5px solid var(--secondary-color);
+  padding: 30px;
+  background: var(--highlight-color);
+  margin: 30px 0;
+}
+
+form h1 {
+  margin-bottom: 20px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* general elements */
+
+button {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  border-radius: 30px;
+  padding: 20px;
+  width: 256px;
+  color: white;
+  font-size: 30px;
+  outline: none;
+  border: 5px solid var(--secondary-color);
+}
+
+.container {
+  padding: 0%;
+  margin: 0%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2% 0 2% 0;
+  font-size: 30px;
+  color: var(--primary-color);
+}
+.header p {
+  align-self: flex-start;
+  margin-left: 1%;
+}
+
+.findTogether {
+  width: 65%;
+}
+
+.preview {
+  width: 35%;
+  height: 35%;
+  padding-right: 1%;
+  border-radius: 10%;
+}
+
+.miniPreview {
+  margin-right: 50px;
+}
+
+img.miniPreview {
+  padding-top: 1%;
+  width: 150px;
+  height: 150px;
+  border-radius: 20%;
+}
+
+.detail-container {
+  font-size: 0.9em;
+  font-weight: bold;
+  padding-left: 1%;
+}
+
+.tags {
+  padding-bottom: 1%;
+}
+
+.pb1 {
+  padding-bottom: 1%;
+}
+.readMore {
+  padding-bottom: 1.5em;
+  font-size: larger;
+  color: #26c6da;
+}
+.linkImg {
+  width: 80px;
+  height: 100px;
+  margin-left: 30%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.miniPreviewAndLink {
+  display: flex;
+  flex-direction: row;
+}
+
+.mt1 {
+  margin-top: 1%;
+}
