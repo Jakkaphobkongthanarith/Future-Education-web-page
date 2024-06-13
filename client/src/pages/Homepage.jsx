@@ -2,46 +2,35 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import linkImage from "../Image/link.jpg";
 
-// import "./src/App.css";
-
 function HomePage() {
   const [locations, setLocations] = useState([]);
   const [search, setSearch] = useState(" ");
-  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     getLocation();
-  }, []);
+  }, [search]);
 
   const getLocation = async () => {
     try {
       const fetchLocation = await axios.get(
-        search === ""
-          ? `http://localhost:4001/trips?keywords=${search}`
-          : `http://localhost:4001/trips?keywords=${search}`
+        `http://localhost:4001/trips?keywords=${search}`
       );
-      console.log("meow", fetchLocation);
       setLocations(fetchLocation.data.data);
-      console.log("Loc", locations);
     } catch (error) {
-      console.log("error JA:", error);
+      console.log("error:", error);
     }
   };
 
-  useEffect(() => {
-    getLocation(search);
-  }, [search]);
+  const handleSearchBar = (tag) => {
+    setSearch(tag.target.value);
+  };
 
   const handleTag = (tag) => {
-    setInputValue(tag);
-    setSearch(tag);
+    if (!search.includes(tag)) {
+      const newValue = !search ? tag : `${search} ${tag}`;
+      setSearch(newValue);
+    }
   };
-
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-    setSearch(event.target.value);
-  };
-
   return (
     <div className="container">
       <div className="header">
@@ -50,8 +39,8 @@ function HomePage() {
           <p>ค้นหาที่เที่ยว</p>
           <input
             placeholder="หาที่เที่ยวแล้วไปกัน..."
-            value={inputValue}
-            onChange={handleInputChange}
+            value={search}
+            onChange={handleSearchBar}
             className="product-text-input"
           ></input>
           <hr />
